@@ -1,3 +1,5 @@
+@import './variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +15,117 @@ section {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+
+  #nav-bar {
+    margin: 0.7rem;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      list-style-type: none;
+      font-family: 'Russo One', sans-serif;
+
+      li {
+        color: $color-background-primary;
+        cursor: pointer;
+        padding: 0.3rem 0.8rem;
+      }
+
+      li:hover {
+        background-color: $color-background-primary;
+        color: $color-primary;
+        border-radius: 3rem;
+      }
+    }
+  }
 }
 
 #home-page {
-  background-color: blue;
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  background: linear-gradient(#1673ff, rgba(24, 124, 183, 0.34));
+  position: relative;
+
+  #img-stars {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  #img-mountains {
+    z-index: 4;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+  }
+
+  #img-photo {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    height: 80vh;
+    right: 15%;
+  }
+
+  #img-moon {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #img-cloud {
+    z-index: 3;
+    position: absolute;
+    top: 3.5rem;
+    left: 3rem;
+  }
+
+  #title {
+    z-index: 2;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    color: $color-background-primary;
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+
+    #name {
+      font-size: 2rem;
+    }
+
+    .job-description {
+      font-size: 3rem;
+    }
+  }
+
+  .tech-icons-container {
+    position: absolute;
+    z-index: 10;
+    top: 8rem;
+    left: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .tech-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      animation: animate 5s linear infinite;
+      animation-duration: calc(30s / var(--anim-duration));
+      transform-origin: bottom;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(22rem);
+    }
+  }
 }
 
 #about-me-page {
