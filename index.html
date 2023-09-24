@@ -11,19 +11,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&display=swap"
     rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-content">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-me" class="nav-link">About me</a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">Experience</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main id="main-container">
     <!-- home screen -->
-    <section id="home-page">
-      <div id="nav-bar">
-        <ul>
-          <li>Home</li>
-          <li>About me</li>
-          <li>Experience</li>
-        </ul>
-      </div>
+    <section id="home" class="full-page">
 
       <img id="img-stars" src="/assets/stars.svg" alt="stars">
       <img id="img-mountains" src="/assets/mountains.svg" alt="mountains">
@@ -39,10 +50,12 @@
       <img id="img-cloud" src="/assets/cloud.svg" alt="cloud">
       <div class="tech-icons-container">
         <img src="/assets//tech_icons/angular-icon.svg" alt="angular icon" class="tech-icon" style="--anim-duration:14">
-        <img src="/assets//tech_icons/spring-boot-icon.png" alt="spring boot icon" class="tech-icon" style="--anim-duration:20">
+        <img src="/assets//tech_icons/spring-boot-icon.png" alt="spring boot icon" class="tech-icon"
+          style="--anim-duration:20">
         <img src="/assets//tech_icons/docker-icon.png" alt="docker icon" class="tech-icon" style="--anim-duration:16">
         <img src="/assets//tech_icons/java-icon.svg" alt="java icon" class="tech-icon" style="--anim-duration:13">
-        <img src="/assets//tech_icons/postgres-icon.png" alt="postgres icon" class="tech-icon" style="--anim-duration:17">
+        <img src="/assets//tech_icons/postgres-icon.png" alt="postgres icon" class="tech-icon"
+          style="--anim-duration:17">
         <img src="/assets//tech_icons/html-icon.png" alt="HTML icon" class="tech-icon" style="--anim-duration:12">
         <img src="/assets//tech_icons/css-icon.svg" alt="CSS icon" class="tech-icon" style="--anim-duration:15">
       </div>
@@ -50,12 +63,12 @@
     </section>
 
     <!-- about me screen -->
-    <section id="about-me-page">
+    <section id="about-me" class="full-page">
       <h1>About Me</h1>
     </section>
 
     <!-- experience screen -->
-    <section id="experience-page">
+    <section id="experience" class="full-page">
       <h1>Experience</h1>
     </section>
   </main>

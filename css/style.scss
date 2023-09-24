@@ -6,45 +6,57 @@
   box-sizing: border-box;
 }
 
-section {
+.full-page {
   height: 100vh;
-  scroll-snap-align: start;
 }
 
-#main-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+.header {
+  position: fixed;
+  z-index: 100;
 
-  #nav-bar {
-    margin: 0.7rem;
-
-    ul {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      list-style-type: none;
-      font-family: 'Russo One', sans-serif;
-
-      li {
-        color: $color-background-primary;
-        cursor: pointer;
-        padding: 0.3rem 0.8rem;
-      }
-
-      li:hover {
-        background-color: $color-background-primary;
-        color: $color-primary;
-        border-radius: 3rem;
-      }
-    }
+  .header-content {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    max-width: 2000px;
+    padding: 0 1.5rem;
   }
 }
 
-#home-page {
+.nav {
+  width: 100%;
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: 'Russo One', sans-serif;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: $color-background-primary;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: $color-background-primary;
+    color: $color-primary;
+    border-radius: 3rem;
+  }
+}
+
+#home {
   display: grid;
   grid-template-rows: 3fr 2fr;
-  background: linear-gradient(#1673ff, rgba(24, 124, 183, 0.34));
+  background: linear-gradient(
+    $color-gradient-primary-high,
+    $color-gradient-primary-low
+  );
   position: relative;
 
   #img-stars {
@@ -93,12 +105,12 @@ section {
 
     #name {
       font-size: 2rem;
-      text-shadow: 0.2rem 0.2rem 0.2rem #ccc;
+      text-shadow: 0.2rem 0.2rem 0.2rem $color-primary-text-shadow;
     }
 
     .job-description {
       font-size: 3rem;
-      text-shadow: 0.3rem 0.3rem 0.3rem #ccc;
+      text-shadow: 0.3rem 0.3rem 0.3rem $color-primary-text-shadow;
     }
   }
 
@@ -130,10 +142,10 @@ section {
   }
 }
 
-#about-me-page {
+#about-me {
   background-color: red;
 }
 
-#experience-page {
+#experience {
   background-color: orange;
 }
