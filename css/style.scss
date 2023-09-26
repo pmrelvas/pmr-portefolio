@@ -52,6 +52,7 @@
 
 #home {
   display: grid;
+  position: relative;
   grid-template-rows: 3fr 2fr;
   background: linear-gradient(
     $color-gradient-primary-high,
@@ -76,7 +77,8 @@
     z-index: 5;
     position: absolute;
     bottom: 0;
-    height: 80vh;
+    max-height: 80vh;
+    max-width: 35vw;
     right: 15%;
   }
 
@@ -94,7 +96,7 @@
     left: 3rem;
   }
 
-  #title {
+  #home-title {
     z-index: 2;
     position: absolute;
     top: 15%;
@@ -114,9 +116,9 @@
     }
   }
 
-  .tech-icons-container {
+  #tech-icons-container {
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     top: 8rem;
     left: 4rem;
     display: flex;
@@ -144,6 +146,8 @@
 
 #about-me {
   background-color: red;
+  z-index: 10;
+  position: relative;
 }
 
 #experience {
