@@ -10,9 +10,10 @@
   height: 100vh;
 }
 
-.header {
+#header {
   position: fixed;
   z-index: 100;
+  width: 100vw;
 
   .header-content {
     height: 3rem;
@@ -38,15 +39,25 @@
     font-family: 'Russo One', sans-serif;
     transition: all 0.2s;
     text-decoration: none;
-    color: $color-background-primary;
+    color: $color-contrast-navbar;
     padding: 0.5rem 1rem;
   }
 
   .nav-link:hover,
   .nav-link.active {
-    background-color: $color-background-primary;
+    background-color: $color-contrast-navbar;
     color: $color-primary;
     border-radius: 3rem;
+  }
+
+  .nav-link-accent {
+    color: $color-primary !important;
+  }
+
+  .nav-link-accent:hover,
+  .nav-link-accent.active {
+    background-color: $color-primary !important;
+    color: $color-contrast-primary !important;
   }
 }
 
@@ -101,7 +112,7 @@
     position: absolute;
     top: 15%;
     width: 100%;
-    color: $color-background-primary;
+    color: $color-contrast-primary;
     font-family: 'Russo One', sans-serif;
     text-align: center;
 
@@ -220,7 +231,7 @@
 }
 
 #about-me {
-  background-color: red;
+  background-color: $color-contrast-primary;
   z-index: 10;
   position: relative;
 }
