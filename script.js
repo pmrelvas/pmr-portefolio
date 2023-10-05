@@ -6,6 +6,9 @@ const fullPageElms = document.querySelectorAll('.full-page');
 let currentPage = 'home';
 let navBar = document.getElementsByClassName('nav')[0];
 const headerEl = document.getElementById('header');
+const aboutMeEl = document.getElementById('about-me');
+const aboutMeTitleEl = document.getElementById('about-me-title');
+const experienceEl = document.getElementById('experience');
 window.addEventListener('scroll', () => {
   fullPageElms.forEach((fullPageEl) => {
     if (window.scrollY >= fullPageEl.offsetTop) {
@@ -25,6 +28,14 @@ window.addEventListener('scroll', () => {
       navLinkEl.classList.add('nav-link-accent');
     } else {
       navLinkEl.classList.remove('nav-link-accent');
+    }
+
+    if (window.scrollY < experienceEl.offsetTop) {
+        let aboutMeTitleContainerFactor = 0.5 * (window.scrollY - aboutMeEl.offsetTop);
+        let aboutMeTitleFactor = 0.05 * (window.scrollY - aboutMeEl.offsetTop);
+        aboutMeTitleEl.style.height = 15 + aboutMeTitleContainerFactor + 'rem';
+        aboutMeTitleEl.style.width = 15 + aboutMeTitleContainerFactor + 'rem';
+        aboutMeTitleEl.style.fontSize = Math.min(9, 1.5 + aboutMeTitleFactor) + 'rem';
     }
   });
 });

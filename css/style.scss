@@ -234,6 +234,98 @@
   background-color: $color-contrast-primary;
   z-index: 10;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #about-me-container {
+    max-width: 2000px !important;
+    width: 100vw;
+    position: relative;
+
+    #about-me-title-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      #about-me-title {
+        background-color: $color-primary-dark;
+        color: $color-contrast-primary;
+        border-radius: 50%;
+        font-family: 'Russo One', sans-serif;
+        font-size: 1.3rem;
+        height: 15rem;
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    #about-me-web-dev {
+      position: absolute;
+      left: 7rem;
+      top: 7rem;
+    }
+
+    #img-pmr-sticker-computer {
+      position: absolute;
+      left: 10rem;
+      top: 4.5rem;
+      width: 8rem;
+      height: auto;
+    }
+
+    #about-me-robotics {
+      position: absolute;
+      right: 7rem;
+      bottom: 10rem;
+    }
+
+    #img-pmr-sticker {
+      position: absolute;
+      right: 10rem;
+      bottom: -7rem;
+      width: 8rem;
+      height: auto;
+    }
+
+    #moving-robot-container {
+      width: 50vw;
+      height: 10rem;
+      position: absolute;
+      bottom: 2rem;
+      left: 1rem;
+
+      #img-5dpo-robot {
+        height: 9rem;
+        width: auto;
+        animation: sdpo-robot-move 10s linear infinite;
+
+        @keyframes sdpo-robot-move {
+          0% {
+            transform: translate(0);
+          }
+          50% {
+            transform: translate(50vw);
+          }
+        }
+      }
+    }
+
+    .about-me-card {
+      background-color: $color-primary;
+      color: $color-contrast-primary;
+      border-radius: 1rem;
+      font-family: 'Roboto', sans-serif;
+      padding: 0.8rem;
+      text-align: justify;
+      text-justify: inter-character;
+      width: 15rem;
+    }
+  }
 }
 
 #experience {
