@@ -35,6 +35,10 @@ window.addEventListener('scroll', () => {
         let aboutMeTitleContainerFactor = 0.2 * (window.scrollY - aboutMeEl.offsetTop);
         let aboutMeTitleFactor = 0.02 * (window.scrollY - aboutMeEl.offsetTop);
         let titleDiameter = Math.min(100, Math.max(5, 15 + aboutMeTitleContainerFactor)) + 'rem';
+        console.log('scroll: ', window.scrollY);
+        console.log('about me offset: ', aboutMeEl.offsetTop)
+        console.log('factor: ', aboutMeTitleFactor);
+        console.log('diameter: ', titleDiameter);
         aboutMeTitleEl.style.height = titleDiameter;
         aboutMeTitleEl.style.width = titleDiameter;
         aboutMeTitleEl.style.fontSize = Math.min(9, Math.max(0.5, 1.5 + aboutMeTitleFactor)) + 'rem';
