@@ -253,6 +253,7 @@
       #about-me-title {
         background-color: $color-primary-dark;
         color: $color-contrast-primary;
+        z-index: 11;
         border-radius: 50%;
         font-family: 'Russo One', sans-serif;
         font-size: 1.3rem;

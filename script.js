@@ -30,12 +30,14 @@ window.addEventListener('scroll', () => {
       navLinkEl.classList.remove('nav-link-accent');
     }
 
+    // explode about me page title
     if (window.scrollY < experienceEl.offsetTop) {
-        let aboutMeTitleContainerFactor = 0.5 * (window.scrollY - aboutMeEl.offsetTop);
-        let aboutMeTitleFactor = 0.05 * (window.scrollY - aboutMeEl.offsetTop);
-        aboutMeTitleEl.style.height = 15 + aboutMeTitleContainerFactor + 'rem';
-        aboutMeTitleEl.style.width = 15 + aboutMeTitleContainerFactor + 'rem';
-        aboutMeTitleEl.style.fontSize = Math.min(9, 1.5 + aboutMeTitleFactor) + 'rem';
+        let aboutMeTitleContainerFactor = 0.2 * (window.scrollY - aboutMeEl.offsetTop);
+        let aboutMeTitleFactor = 0.02 * (window.scrollY - aboutMeEl.offsetTop);
+        let titleDiameter = Math.min(100, Math.max(5, 15 + aboutMeTitleContainerFactor)) + 'rem';
+        aboutMeTitleEl.style.height = titleDiameter;
+        aboutMeTitleEl.style.width = titleDiameter;
+        aboutMeTitleEl.style.fontSize = Math.min(9, Math.max(0.5, 1.5 + aboutMeTitleFactor)) + 'rem';
     }
   });
 });
