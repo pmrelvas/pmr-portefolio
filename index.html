@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&display=swap"
     rel="stylesheet">
   <script defer src="script.js"></script>
+  <script defer src="snake-script.js"></script>
 </head>
 
 <body>
@@ -96,7 +97,33 @@
 
     <!-- experience screen -->
     <section id="experience" class="full-page">
-      <h1>Experience</h1>
+      <div id="experience-timeline">
+
+      </div>
+      <div id="snake-container">
+        <div id="snake-score-container">
+          <div id="snake-score-container">
+            <span>Score: </span>
+            <span id="snake-score">0</span>
+          </div>
+        </div>
+
+        <div id="snake-canvas-container">
+          <canvas id="snake-canvas"></canvas>
+          <img src="/assets/snake-game-over.png" id="img-snake-game-over" alt="snake game over image">
+        </div>
+
+        <button id="btn-start-snake-game">
+          Start
+        </button>
+
+        <div id="snake-quote-container">
+          <div id="snake-quote">
+            <q>If it’s not fun, you’re not doing it right</q>
+            <span id="snake-quote-author">Bob Basso</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>
