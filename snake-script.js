@@ -1,3 +1,4 @@
+const NUM_LETTERS = 13;
 const FOOD_LETTERS = [
   {
     letter: 'I',
@@ -52,6 +53,16 @@ const FOOD_LETTERS = [
     color: '#E38520'
   },
 ];
+const SOLUTION_COLORS = [
+  'white',
+  '#E38520',
+  '#ccc',
+  'E3DA14',
+  'white',
+  '#E38520',
+  '#ccc',
+  'E3DA14'
+];
 const GameStatus = {
   IDLE: 0,
   RUNNING: 1,
@@ -95,11 +106,13 @@ btnReset.addEventListener('click', resetGame);
 displayStartGame();
 
 function displayStartGame() {
-  ctx.font = '3rem Russo One';
+  ctx.font = '1.5rem Russo One';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
+  ctx.fillText("Help the snake discover", canvasWidth / 2, canvasHeight / 2 - 120);
+  ctx.fillText("the main companies I've worked on", canvasWidth / 2, canvasHeight / 2 - 60);
   ctx.fillText("Press any key to start...", canvasWidth / 2, canvasHeight / 2);
-  ctx.fillText("Controls: a, s, d, w", canvasWidth / 2, canvasHeight / 2 + 100);
+  ctx.fillText("Controls: a, s, d, w", canvasWidth / 2, canvasHeight / 2 + 60);
 }
 
 function startGame() {
@@ -140,7 +153,7 @@ function createFood() {
 }
 
 function drawFood() {
-  const idx = score % 13;
+  const idx = score % NUM_LETTERS;
   ctx.fillStyle = FOOD_LETTERS[idx].color;
   ctx.fillRect(foodX, foodY, unitSize, unitSize);
   ctx.font = '22px Russo One';
@@ -158,6 +171,14 @@ function incrementScore() {
   lblScore.textContent = score;
 }
 
+function displaySolutionLetter() {
+  const letterEl = document.getElementById('snake-solution-item-' + String(score + 1).padStart(2, '0'));
+  const idx = score % NUM_LETTERS;
+  letterEl.textContent = FOOD_LETTERS[idx].letter;
+  const colorIdx = Math.floor(score / NUM_LETTERS);
+  letterEl.color = SOLUTION_COLORS[colorIdx];
+}
+
 function moveSnake() {
   const head = {
     x: snake[0].x + vx,
@@ -165,6 +186,7 @@ function moveSnake() {
   };
   snake.unshift(head);
   if (isFoodEaten()) {
+    displaySolutionLetter();
     incrementScore();
     createFood();
   } else {

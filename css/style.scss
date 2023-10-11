@@ -384,56 +384,86 @@
     width: 40vw;
   }
 
-  #snake-container {
-    flex-grow: 1;
+  #snake-side {
     background-color: $color-primary;
-    position: relative;
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 
-    #snake-canvas-container {
-      flex-grow: 1;
-      margin: 1rem;
-    }
-
-    #snake-canvas {
-      border: 2px solid $color-contrast-primary;
-      border-radius: 1rem;
-    }
-
-    .img-snake-food, #img-snake-game-over {
-      display: none;
-      width: 30px;
-      height: 30px;
-    }
-
-    #snake-score-container {
-      color: $color-contrast-primary;
-      font-family: 'Russo One', sans-serif;
-      font-size: 2rem;
-      padding: 1rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    #snake-quote-container {
-      margin-bottom: 1rem;
+    #snake-container {
+      max-width: 600px;
       width: 100%;
-      color: $color-contrast-primary;
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.2rem;
+      position: relative;
       display: flex;
-      justify-content: center;
-      flex-direction: row;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
 
-      #snake-quote {
+      #snake-canvas-container {
+        flex-grow: 1;
+      }
+
+      #snake-canvas {
+        border: 2px solid $color-contrast-primary;
+        border-radius: 1rem;
+      }
+
+      #img-snake-game-over {
+        display: none;
+      }
+
+      #snake-header-container {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
 
-        #snake-quote-author {
-          font-size: 0.9rem;
+        #btn-reset-snake-game {
+          border: 2px solid $color-contrast-primary;
+          border-radius: 0.5rem;
+          background-color: $color-primary;
+          color: $color-contrast-primary;
+          font-family: 'Russo One', sans-serif;
+          padding: 0 1rem;
+        }
+      }
+
+      #snake-score-container {
+        color: $color-contrast-primary;
+        font-family: 'Russo One', sans-serif;
+        font-size: 2rem;
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #snake-solution {
+        font-family: 'Roboto Mono', monospace;
+        color: $color-contrast-primary;
+
+        .snake-solution-item {
+          border-bottom: 2px solid $color-contrast-primary;
+        }
+      }
+
+      #snake-quote-container {
+        margin-bottom: 1rem;
+        width: 100%;
+        color: $color-contrast-primary;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        #snake-quote {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          #snake-quote-author {
+            font-size: 0.9rem;
+          }
         }
       }
     }
