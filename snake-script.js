@@ -82,10 +82,6 @@ const boardBackground = '#2C80FF';
 const snakeColor = 'white';
 const snakeBorder = '#ccc';
 const unitSize = 25;
-const LEFT =  'a';
-const RIGHT = 'd';
-const UP = 'w';
-const DOWN = 's';
 let gameStatus = GameStatus.IDLE;
 let vx = unitSize;
 let vy = 0;
@@ -112,7 +108,7 @@ function displayStartGame() {
   ctx.fillText("Help the snake discover", canvasWidth / 2, canvasHeight / 2 - 120);
   ctx.fillText("the main companies I've worked on", canvasWidth / 2, canvasHeight / 2 - 60);
   ctx.fillText("Press any key to start...", canvasWidth / 2, canvasHeight / 2);
-  ctx.fillText("Controls: a, s, d, w", canvasWidth / 2, canvasHeight / 2 + 60);
+  ctx.fillText("Controls: a, s, d, w or h, j, k, l (vim)", canvasWidth / 2, canvasHeight / 2 + 60);
 }
 
 function startGame() {
@@ -203,22 +199,38 @@ function drawSnake() {
   });
 }
 
+function keyStrokeLeft(key) {
+  return key === 'a' || key === 'h';
+}
+
+function keyStrokeRight(key) {
+  return key === 'd' || key === 'l';
+}
+
+function keyStrokeUp(key) {
+  return key === 'w' || key === 'k';
+}
+
+function keyStrokeDown(key) {
+  return key === 's' || key === 'j';
+}
+
 function handleSnakeNavigation(event) {
   const goingUp = (vy == -unitSize);
   const goingDown = (vy == unitSize);
   const goingLeft = (vx == -unitSize);
   const goingRight = (vx == unitSize);
 
-  if (event.key == LEFT && !goingRight) {
+  if (keyStrokeLeft(event.key) && !goingRight) {
     vx = -unitSize;
     vy = 0;
-  } else if (event.key == RIGHT && !goingLeft) {
+  } else if (keyStrokeRight(event.key) && !goingLeft) {
     vx = unitSize;
     vy = 0;
-  } else if (event.key == UP && !goingDown) {
+  } else if (keyStrokeUp(event.key) && !goingDown) {
     vx = 0;
     vy = -unitSize;
-  } else if (event.key == DOWN && !goingUp) {
+  } else if (keyStrokeDown(event.key) && !goingUp) {
     vx = 0;
     vy = unitSize;
   }
