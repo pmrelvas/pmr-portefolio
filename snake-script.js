@@ -75,9 +75,14 @@ snakeCanvas.height = canvasContainerEl.offsetHeight;
 const ctx = snakeCanvas.getContext('2d');
 const lblScore = document.getElementById('snake-score');
 const btnReset = document.getElementById('btn-reset-snake-game');
+const btnNavUp = document.getElementById('btn-snake-nav-up');
+const btnNavLeft = document.getElementById('btn-snake-nav-left');
+const btnNavDown = document.getElementById('btn-snake-nav-down');
+const btnNavRight = document.getElementById('btn-snake-nav-right');
 const canvasWidth = Math.floor(snakeCanvas.getBoundingClientRect().width);
 const canvasHeight = Math.floor(snakeCanvas.getBoundingClientRect().height);
 const imgGameOver = document.getElementById('img-snake-game-over');
+const mainContainerEl = document.getElementById('main-container');
 const boardBackground = '#2C80FF';
 const snakeColor = 'white';
 const snakeBorder = '#ccc';
@@ -98,8 +103,16 @@ let snake = [
 
 window.addEventListener('keydown', onKeyDown);
 btnReset.addEventListener('click', resetGame);
+btnNavUp.addEventListener('click', onNavUpClick);
+btnNavDown.addEventListener('click', onNavDownClick);
+btnNavLeft.addEventListener('click', onNavLeftClick);
+btnNavRight.addEventListener('click', onNavRightClick);
 
 displayStartGame();
+
+function isMobileView() {
+  return mainContainerEl.offsetWidth < 840;
+}
 
 function displayStartGame() {
   ctx.font = '1.5rem Russo One';
@@ -107,8 +120,13 @@ function displayStartGame() {
   ctx.textAlign = 'center';
   ctx.fillText("Help the snake discover", canvasWidth / 2, canvasHeight / 2 - 120);
   ctx.fillText("the main companies I've worked on", canvasWidth / 2, canvasHeight / 2 - 60);
-  ctx.fillText("Press any key to start...", canvasWidth / 2, canvasHeight / 2);
-  ctx.fillText("Controls: a, s, d, w or h, j, k, l (vim)", canvasWidth / 2, canvasHeight / 2 + 60);
+  if (isMobileView()) {
+    btnReset.textContent = 'Start';
+    ctx.fillText("Press the start button...", canvasWidth / 2, canvasHeight / 2);
+  } else {
+    ctx.fillText("Press any key to start...", canvasWidth / 2, canvasHeight / 2);
+    ctx.fillText("Controls: a, s, d, w or h, j, k, l (vim)", canvasWidth / 2, canvasHeight / 2 + 60);
+  }
 }
 
 function startGame() {
@@ -236,6 +254,22 @@ function handleSnakeNavigation(event) {
   }
 }
 
+function onNavUpClick() {
+  handleSnakeNavigation({key: 'w'});
+}
+
+function onNavDownClick() {
+  handleSnakeNavigation({key: 's'});
+}
+
+function onNavLeftClick() {
+  handleSnakeNavigation({key: 'a'});
+}
+
+function onNavRightClick() {
+  handleSnakeNavigation({key: 'd'});
+}
+
 function onKeyDown(event) {
   if (gameStatus == GameStatus.IDLE) {
     startGame();
@@ -282,5 +316,8 @@ function resetGame() {
     { x: unitSize, y: 0 },
     { x: 0, y: 0 },
   ];
+  if (gameStatus == GameStatus.IDLE && isMobileView()) {
+    btnReset.textContent = 'Reset';
+  }
   startGame();
 }
