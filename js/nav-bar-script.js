@@ -1,5 +1,3 @@
-// ----------------------------------------------------------
-// nav bar
 const navLinkElms = document.querySelectorAll('.nav-link');
 const fullPageElms = document.querySelectorAll('.full-page');
 
@@ -9,6 +7,7 @@ const headerEl = document.getElementById('header');
 const aboutMeEl = document.getElementById('about-me');
 const aboutMeTitleEl = document.getElementById('about-me-title');
 const experienceEl = document.getElementById('experience');
+const experienceTimelineContainerEl = document.getElementById('experience-timeline-container');
 window.addEventListener('scroll', () => {
   fullPageElms.forEach((fullPageEl) => {
     if (window.scrollY >= fullPageEl.offsetTop) {
@@ -30,6 +29,10 @@ window.addEventListener('scroll', () => {
       navLinkEl.classList.remove('nav-link-accent');
     }
 
+    if (currentPage === 'experience') {
+      experienceTimelineContainerEl.style.classList.add('experience-timeline-animation');
+    }
+
     // explode about me page title
     if (window.scrollY < experienceEl.offsetTop) {
         let aboutMeTitleContainerFactor = 0.2 * (window.scrollY - aboutMeEl.offsetTop);
@@ -41,24 +44,3 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
-// ----------------------------------------------------------
-// home parallax effect
-const imgMoonEl = document.getElementById("img-moon");
-const homeTitleEl = document.getElementById("home-title");
-const initialHomeTitleTop = homeTitleEl.getBoundingClientRect().top;
-const imgCloudEl = document.getElementById("img-cloud");
-const initialCloudLeft = imgCloudEl.getBoundingClientRect().left;
-const techIconsContainerEl = document.getElementById("tech-icons-container");
-const initialTechIconsContainer = techIconsContainerEl.getBoundingClientRect().left;
-
-
-window.addEventListener('scroll', () => {
-  imgMoonEl.style.top = - 0.9 * window.scrollY + 'px';
-  homeTitleEl.style.top = initialHomeTitleTop + 1.4 * window.scrollY + 'px';
-  imgCloudEl.style.left = initialCloudLeft + window.scrollY + 'px';
-  techIconsContainerEl.style.left = initialTechIconsContainer + window.scrollY + 'px';
-});
-
-// ----------------------------------------------------------
-// pong game
