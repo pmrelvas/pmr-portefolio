@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .full-page {
@@ -382,6 +383,118 @@
   #experience-timeline {
     background-color: $color-contrast-primary;
     width: 40vw;
+    padding-top: 3rem;
+    position: relative;
+
+    #experience-timeline-container {
+      padding: 1rem;
+      position: relative;
+    }
+
+    #exp-timeline-line {
+      content: '';
+      background-color: $color-primary;
+      width: 0.3rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 4.5rem;
+      z-index: 21;
+    }
+
+    .experience-timeline-animation {
+      animation: progress-down 5s linear forwards;
+    }
+
+    @keyframes progress-down {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+
+    .exp-timeline-item-animation {
+      animation: timeline-move-down 1s linear forwards;
+
+      @keyframes timeline-move-down {
+        0% {
+          opacity: 0;
+          transform: translateY(-30);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    #exp-timeline-item {
+      animation-delay: 0s;
+    }
+
+    #exp-timeline-item-inesc {
+      animation-delay: 1s;
+    }
+
+    #exp-timeline-item-jumia {
+      animation-delay: 2s;
+    }
+
+    .exp-timeline-item {
+      opacity: 0;
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      gap: 0.3rem;
+      padding: 0.5rem 0;
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.3rem;
+
+        li {
+          background-color: $color-primary;
+          color: $color-contrast-primary;
+          border-radius: 0.5rem;
+          padding: 0.2rem 0.5rem;
+        }
+      }
+
+      .exp-timeline-year {
+        color: $color-primary;
+        min-width: 2.5rem;
+      }
+
+      .exp-timeline-sphere {
+        content: '';
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        color: $color-contrast-primary;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 23;
+      }
+
+      .exp-timeline-position {
+        font-family: 'Russo One', sans-serif;
+        font-weight: bold;
+      }
+
+      .exp-timeline-place {
+        font-family: 'Russo One', sans-serif;
+      }
+    }
   }
 
   #snake-side {
@@ -515,6 +628,6 @@
 
   // mobile
   @media screen and (max-width: 480px) {
-      display: grid !important;
+    display: grid !important;
   }
 }

@@ -22,15 +22,12 @@ window.addEventListener('scroll', () => {
       navLinkEl.classList.remove('active');
     }
 
+    // TODO: refactor this to an Intersection Observer
     // change navbar color on about me page
     if (currentPage === 'about-me') {
       navLinkEl.classList.add('nav-link-accent');
     } else {
       navLinkEl.classList.remove('nav-link-accent');
-    }
-
-    if (currentPage === 'experience') {
-      experienceTimelineContainerEl.style.classList.add('experience-timeline-animation');
     }
 
     // explode about me page title
