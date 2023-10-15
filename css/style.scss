@@ -383,6 +383,19 @@
   display: flex;
   flex-direction: row;
 
+  #btn-experience-toggle-game {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 21;
+    background-color: transparent;
+    border: none;
+    color: $color-primary;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+
   #experience-timeline {
     background-color: $color-contrast-primary;
     width: 40vw;
@@ -438,11 +451,11 @@
     }
 
     #exp-timeline-item-inesc {
-      animation-delay: 1s;
+      animation-delay: 1.2s;
     }
 
     #exp-timeline-item-jumia {
-      animation-delay: 2s;
+      animation-delay: 3s;
     }
 
     .exp-timeline-item {
@@ -630,10 +643,34 @@
     #snake-navigation-buttons {
       display: grid !important;
     }
+
+    #snake-side {
+      display: none;
+    }
+
+    #experience-timeline {
+      width: 100vw !important;
+    }
+
+    #btn-experience-toggle-game {
+      display: inline;
+    }
   }
 
   // mobile
   @media screen and (max-width: 480px) {
     display: grid !important;
+
+    #snake-side {
+      display: none;
+    }
+
+    #experience-timeline {
+      width: 100vw !important;
+    }
+
+    #btn-experience-toggle-game {
+      display: inline;
+    }
   }
 }
