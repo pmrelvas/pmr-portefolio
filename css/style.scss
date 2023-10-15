@@ -114,8 +114,11 @@
     top: 15%;
     width: 100%;
     color: $color-contrast-primary;
-    font-family: 'Russo One', sans-serif;
     text-align: center;
+
+    span {
+      font-family: 'Russo One', sans-serif;
+    }
 
     #name {
       font-size: 2rem;
@@ -543,12 +546,15 @@
 
       #snake-score-container {
         color: $color-contrast-primary;
-        font-family: 'Russo One', sans-serif;
-        font-size: 2rem;
         display: flex;
         gap: 0.3rem;
         flex-direction: row;
         justify-content: space-between;
+
+        span {
+          font-family: 'Russo One', sans-serif;
+          font-size: 2rem;
+        }
       }
 
       #snake-solution {
