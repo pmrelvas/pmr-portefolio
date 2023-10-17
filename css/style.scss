@@ -255,17 +255,17 @@
       align-items: center;
 
       #about-me-title {
-        background-color: $color-primary-dark;
         color: $color-contrast-primary;
-        z-index: 11;
+        background-color: $color-primary-dark;
         border-radius: 50%;
-        font-family: 'Russo One', sans-serif;
-        font-size: 1.3rem;
-        height: 15rem;
-        width: 15rem;
+        height: 200px;
+        width: 200px;
+        z-index: 11;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: 'Russo One', sans-serif;
+        font-size: 1.3rem;
       }
     }
 
