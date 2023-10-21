@@ -1,4 +1,6 @@
 const aboutMeTitleEl = document.getElementById('about-me-title');
+const aboutMeEl = document.getElementById('about-me');
+const experienceEl = document.getElementById('experience');
 const titleDiameterMin = 50;
 const titleDiameterStd = 200;
 const titleMaxFontSizeRem = 9;

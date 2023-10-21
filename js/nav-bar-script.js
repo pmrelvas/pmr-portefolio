@@ -1,12 +1,11 @@
 const navLinkElms = document.querySelectorAll('.nav-link');
 const fullPageElms = document.querySelectorAll('.full-page');
-
+const btnToggleSidenav = document.getElementById('btn-toggle-sidenav');
+const navEl = document.getElementById('nav');
 let currentPage = 'home';
-let navBar = document.getElementsByClassName('nav')[0];
-const headerEl = document.getElementById('header');
-const aboutMeEl = document.getElementById('about-me');
-const experienceEl = document.getElementById('experience');
-const experienceTimelineContainerEl = document.getElementById('experience-timeline-container');
+
+btnToggleSidenav.addEventListener('click', onToggleSidenavClick);
+
 window.addEventListener('scroll', () => {
   fullPageElms.forEach((fullPageEl) => {
     if (window.scrollY >= fullPageEl.offsetTop) {
@@ -20,13 +19,16 @@ window.addEventListener('scroll', () => {
     } else {
       navLinkEl.classList.remove('active');
     }
-
-    // TODO: refactor this to an Intersection Observer
-    // change navbar color on about me page
-    if (currentPage === 'about-me') {
-      navLinkEl.classList.add('nav-link-accent');
-    } else {
-      navLinkEl.classList.remove('nav-link-accent');
-    }
   });
 });
+
+function onToggleSidenavClick() {
+  const isDataVisible = navEl.getAttribute('data-visible');
+  if (isDataVisible === 'false') {
+    navEl.setAttribute('data-visible', true);
+    navEl.setAttribute('aria-expanded', true);
+  } else if (isDataVisible === 'true') {
+    navEl.setAttribute('data-visible', false);
+    navEl.setAttribute('aria-expanded', false);
+  }
+}
