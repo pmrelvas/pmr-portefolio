@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Relvas</title>
-    <link rel="icon" href="/assets/pmr-computer.png">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <main id="main-container">
-      <section id="home-page">
-        <h1>Home</h1>
-      </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Relvas</title>
+  <link rel="icon" href="/assets/pmr-computer.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8f12e50e01.js" crossorigin="anonymous"></script>
+  <!-- TODO uglify and minify js -->
+  <script defer src="js/nav-bar-script.js"></script>
+</head>
 
-      <section id="about-me-page">
-        <h1>About Me</h1>
-      </section>
+<body>
+  <header id="header">
+    <div class="header-content">
+      <button id="btn-toggle-sidenav"><i class="fa-solid fa-bars"></i></button>
+      <nav id="nav" data-visible="false" aria-expanded="false">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-me" class="nav-link">About me</a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <section id="experience-page">
-        <h1>Experience</h1>
-      </section>
-    </main>
-  </body>
+  <main id="main-container">
+    <!-- home screen -->
+    <section id="home" class="full-page">
+      <h1>Home</h1>
+    </section>
+    <!-- about me screen -->
+    <section id="about-me" class="full-page">
+      <h1>About Me</h1>
+    </section>
+
+    <!-- experience screen -->
+    <section id="experience" class="full-page">
+      <h1>Experience</h1>
+    </section>
+
+    <!-- projects screen -->
+    <section id="projects" class="full-page">
+      <h1>Projects</h1>
+    </section>
+  </main>
+</body>
+
 </html>
