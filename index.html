@@ -11,52 +11,52 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&display=swap"
     rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8f12e50e01.js" crossorigin="anonymous"></script>
+  <!-- TODO uglify and minify js -->
+  <script defer src="js/nav-bar-script.js"></script>
 </head>
 
 <body>
+  <header id="header">
+    <div class="header-content">
+      <button id="btn-toggle-sidenav"><i class="fa-solid fa-bars"></i></button>
+      <nav id="nav" data-visible="false" aria-expanded="false">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-me" class="nav-link">About me</a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main id="main-container">
     <!-- home screen -->
-    <section id="home-page">
-      <div id="nav-bar">
-        <ul>
-          <li>Home</li>
-          <li>About me</li>
-          <li>Experience</li>
-        </ul>
-      </div>
-
-      <img id="img-stars" src="/assets/stars.svg" alt="stars">
-      <img id="img-mountains" src="/assets/mountains.svg" alt="mountains">
-      <img id="img-photo" src="/assets/pmr-photo.png" alt="photo">
-      <img id="img-moon" src="/assets/moon.svg" alt="moon">
-      <div id="title">
-        <span id="name">Pedro Relvas</span><br>
-        <span class="job-description">Full-Stack</span><br>
-        <span class="job-description">Developer</span>
-      </div>
-
-      <!-- tech cloud rain-->
-      <img id="img-cloud" src="/assets/cloud.svg" alt="cloud">
-      <div class="tech-icons-container">
-        <img src="/assets//tech_icons/angular-icon.svg" alt="angular icon" class="tech-icon" style="--anim-duration:14">
-        <img src="/assets//tech_icons/spring-boot-icon.png" alt="spring boot icon" class="tech-icon" style="--anim-duration:20">
-        <img src="/assets//tech_icons/docker-icon.png" alt="docker icon" class="tech-icon" style="--anim-duration:16">
-        <img src="/assets//tech_icons/java-icon.svg" alt="java icon" class="tech-icon" style="--anim-duration:13">
-        <img src="/assets//tech_icons/postgres-icon.png" alt="postgres icon" class="tech-icon" style="--anim-duration:17">
-        <img src="/assets//tech_icons/html-icon.png" alt="HTML icon" class="tech-icon" style="--anim-duration:12">
-        <img src="/assets//tech_icons/css-icon.svg" alt="CSS icon" class="tech-icon" style="--anim-duration:15">
-      </div>
-
+    <section id="home" class="full-page">
+      <h1>Home</h1>
     </section>
-
     <!-- about me screen -->
-    <section id="about-me-page">
+    <section id="about-me" class="full-page">
       <h1>About Me</h1>
     </section>
 
     <!-- experience screen -->
-    <section id="experience-page">
+    <section id="experience" class="full-page">
       <h1>Experience</h1>
+    </section>
+
+    <!-- projects screen -->
+    <section id="projects" class="full-page">
+      <h1>Projects</h1>
     </section>
   </main>
 </body>
