@@ -1,10 +1,18 @@
 const navLinkElms = document.querySelectorAll('.nav-link');
 const fullPageElms = document.querySelectorAll('.full-page');
 const btnToggleSidenav = document.getElementById('btn-toggle-sidenav');
+const stToggleTheme = document.getElementById('st-theme-switcher');
 const navEl = document.getElementById('nav');
 let currentPage = 'home';
 
 btnToggleSidenav.addEventListener('click', onToggleSidenavClick);
+stToggleTheme.addEventListener('change', () => {
+  if (stToggleTheme.checked) {
+    document.body.classList.replace('light-theme', 'dark-theme');
+  } else {
+    document.body.classList.replace('dark-theme', 'light-theme');
+  }
+});
 
 window.addEventListener('scroll', () => {
   fullPageElms.forEach((fullPageEl) => {
