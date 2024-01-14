@@ -3,14 +3,20 @@ const fullPageElms = document.querySelectorAll('.full-page');
 const btnToggleSidenav = document.getElementById('btn-toggle-sidenav');
 const stToggleTheme = document.getElementById('st-theme-switcher');
 const navEl = document.getElementById('nav');
+const iconThemeSun = document.getElementById('i-theme-sun');
+const iconThemeMoon = document.getElementById('i-theme-moon');
 let currentPage = 'home';
 
 btnToggleSidenav.addEventListener('click', onToggleSidenavClick);
 stToggleTheme.addEventListener('change', () => {
   if (stToggleTheme.checked) {
     document.body.classList.replace('light-theme', 'dark-theme');
+    iconThemeMoon.classList.replace('hidden', 'visible');
+    iconThemeSun.classList.replace('visible', 'hidden');
   } else {
     document.body.classList.replace('dark-theme', 'light-theme');
+    iconThemeMoon.classList.replace('visible', 'hidden');
+    iconThemeSun.classList.replace('hidden', 'visible');
   }
 });
 
