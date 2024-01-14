@@ -5,18 +5,23 @@ const stToggleTheme = document.getElementById('st-theme-switcher');
 const navEl = document.getElementById('nav');
 const iconThemeSun = document.getElementById('i-theme-sun');
 const iconThemeMoon = document.getElementById('i-theme-moon');
+const activeThemeKey = "activeTheme";
+const darkTheme = "dark-theme";
+const lightTheme = "light-theme";
 let currentPage = 'home';
 
 btnToggleSidenav.addEventListener('click', onToggleSidenavClick);
 stToggleTheme.addEventListener('change', () => {
-  if (stToggleTheme.checked) {
-    document.body.classList.replace('light-theme', 'dark-theme');
-    iconThemeMoon.classList.replace('hidden', 'visible');
-    iconThemeSun.classList.replace('visible', 'hidden');
-  } else {
-    document.body.classList.replace('dark-theme', 'light-theme');
-    iconThemeMoon.classList.replace('visible', 'hidden');
-    iconThemeSun.classList.replace('hidden', 'visible');
+  setTheme(stToggleTheme.checked ? darkTheme : lightTheme);
+});
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  let activeTheme = localStorage.getItem(activeThemeKey);
+  if (!activeTheme) {
+    activeTheme = darkTheme;
+  }
+  if (activeTheme == darkTheme) {
+    stToggleTheme.click();
   }
 });
 
@@ -35,6 +40,24 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+function setTheme(theme) {
+  switch (theme) {
+    case lightTheme:
+      document.body.classList.replace(darkTheme, lightTheme);
+      iconThemeMoon.classList.replace('visible', 'hidden');
+      iconThemeSun.classList.replace('hidden', 'visible');
+      localStorage.setItem(activeThemeKey, lightTheme);
+      break;
+    case darkTheme:
+    default:
+      document.body.classList.replace(lightTheme, darkTheme);
+      iconThemeMoon.classList.replace('hidden', 'visible');
+      iconThemeSun.classList.replace('visible', 'hidden');
+      localStorage.setItem(activeThemeKey, darkTheme);
+      break;
+  }
+}
 
 function onToggleSidenavClick() {
   const isDataVisible = navEl.getAttribute('data-visible');
