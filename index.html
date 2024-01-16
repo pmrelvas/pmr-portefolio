@@ -40,7 +40,7 @@
       <div id="theme-switcher">
         <i class="fa-solid fa-sun i-active-theme visible" id="i-theme-sun"></i>
         <i class="fa-solid fa-moon i-active-theme hidden" id="i-theme-moon"></i>
-        <input type="checkbox" id="st-theme-switcher" value="true"/>
+        <input type="checkbox" id="st-theme-switcher" value="true" />
         <label for="st-theme-switcher" id="lbl-st-theme-switcher"></label>
       </div>
     </div>
@@ -49,7 +49,71 @@
   <main id="main-container">
     <!-- home screen -->
     <section id="home" class="full-page">
-      <h1>Home</h1>
+      <div class="full-page-container" id="home-container">
+        <div id="pmr-photo-container">
+          <img id="img-pmr-photo" src="/assets/pmr-photo.png" alt="Pedro photo">
+        </div>
+        <div id="home-title">
+          <div class="title-container">
+            <h2>Pedro Relvas</h2>
+            <h1>Full-Stack<br>Developer</h1>
+          </div>
+        </div>
+        <div id="tech-rain-container">
+          <!-- tech cloud rain-->
+          <div id="tech-cloud-rain">
+            <img id="img-cloud" class="img-white" src="/assets/cloud.svg" alt="cloud">
+            <div id="tech-icons-container">
+              <img src="/assets/tech_icons/angular-icon.svg" alt="angular icon" class="tech-icon img-white"
+                style="--anim-duration:14">
+              <img src="/assets/tech_icons/spring-boot-icon.png" alt="spring boot icon" class="tech-icon img-white"
+                style="--anim-duration:20">
+              <img src="/assets/tech_icons/docker-icon.png" alt="docker icon" class="tech-icon img-white"
+                style="--anim-duration:16">
+              <img src="/assets/tech_icons/java-icon.svg" alt="java icon" class="tech-icon img-white" style="--anim-duration:13">
+              <img src="/assets/tech_icons/postgres-icon.png" alt="postgres icon" class="tech-icon img-white"
+                style="--anim-duration:17">
+              <img src="/assets/tech_icons/html-icon.png" alt="HTML icon" class="tech-icon img-white" style="--anim-duration:12">
+              <img src="/assets/tech_icons/css-icon.svg" alt="CSS icon" class="tech-icon img-white" style="--anim-duration:15">
+            </div>
+          </div>
+        </div>
+        <div id="tech-keywords">
+          <div id="keywords-background">
+            <div class="keyword-line">
+              <div class="horizontal-spacer"></div>
+              <div class="keyword-code-container">
+                <div class="window-buttons">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="code">
+                  <span class="code-selector">&lt;h1&gt;</span>
+                  Web Developer
+                  <span class="code-selector">&lt;/h1&gt;</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="keyword-line">
+              <div class="keyword-code-container">
+                <div class="window-buttons">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="code">
+                  <span class="code-selector">printf(</span>
+                  "Robotics & Systems"
+                  <span class="code-selector">);</span>
+                </div>
+              </div>
+              <div class="horizontal-spacer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- about me screen -->
     <section id="about-me" class="full-page">
