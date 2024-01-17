@@ -380,8 +380,172 @@ html {
 }
 
 #about-me {
-  background-color: red;
+  background-color: var(--clr-background);
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #about-me-container {
+    max-width: 2000px !important;
+    width: 100vw;
+    position: relative;
+
+    #about-me-circle-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      #about-me-circle {
+        content: '';
+        background-color: var(--clr-primary);
+        border-radius: 50%;
+        z-index: 11;
+      }
+    }
+
+    #about-me-web-dev {
+      position: absolute;
+      left: 7rem;
+      top: 7rem;
+    }
+
+    .about-me-web-dev-animation {
+      animation: am-web-dev-slide-right 1s forwards;
+
+      @keyframes am-web-dev-slide-right {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+
+
+    #img-pmr-sticker-computer {
+      position: absolute;
+      left: 10rem;
+      top: 4.5rem;
+      width: 8rem;
+      height: auto;
+    }
+
+    #about-me-robotics {
+      position: absolute;
+      right: 7rem;
+      bottom: 10rem;
+    }
+
+    .about-me-robotics-animation {
+      animation: am-robotics-slide-left 1s forwards;
+
+      @keyframes am-robotics-slide-left {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    #img-pmr-sticker {
+      position: absolute;
+      right: 10rem;
+      bottom: -7rem;
+      width: 8rem;
+      height: auto;
+    }
+
+    #moving-robot-container {
+      width: 50vw;
+      height: 10rem;
+      position: absolute;
+      bottom: 2rem;
+      left: 1rem;
+
+      #img-5dpo-robot {
+        height: 9rem;
+        width: auto;
+        animation: sdpo-robot-move 10s linear infinite;
+
+        @keyframes sdpo-robot-move {
+          0% {
+            transform: translate(0);
+          }
+          50% {
+            transform: translate(50vw);
+          }
+        }
+      }
+    }
+
+    .about-me-card {
+      background-color: var(--clr-secondary);
+      color: var(--clr-background);
+      border-radius: 1rem;
+      font-family: 'Roboto', sans-serif;
+      padding: 0.8rem;
+      text-align: justify;
+      text-justify: inter-character;
+      width: 15rem;
+    }
+  }
+
+  // tablet
+  @media screen and (max-width: 820px) {
+    #moving-robot-container {
+      width: 40vw !important;
+
+      @keyframes sdpo-robot-move {
+        0% {
+          transform: translate(0);
+        }
+        50% {
+          transform: translate(30vw);
+        }
+      }
+    }
+  }
+
+  // mobile
+  @media screen and (max-width: 480px) {
+    #about-me-title {
+      color: var(--clr-primary) !important;
+      background-color: transparent !important;
+    }
+
+    #about-me-web-dev {
+      left: 3rem !important;
+      top: 5rem !important;
+    }
+
+    #about-me-robotics {
+      right: 3rem !important;
+      bottom: 10rem !important;
+    }
+
+    #moving-robot-container {
+      right: 0;
+      left: auto !important;
+      height: 6rem !important;
+
+      #img-5dpo-robot {
+        height: 5rem !important;
+      }
+    }
+  }
 }
+
 
 #experience {
   z-index: 20;
