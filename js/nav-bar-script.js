@@ -9,6 +9,9 @@ const activeThemeKey = "activeTheme";
 const darkTheme = "dark-theme";
 const lightTheme = "light-theme";
 let currentPage = 'home';
+const imgCloud = document.getElementById('img-cloud');
+const imgTechIcons = document.querySelectorAll('.tech-icon');
+const img5dpoRobot = document.getElementById('img-5dpo-robot');
 
 btnToggleSidenav.addEventListener('click', onToggleSidenavClick);
 stToggleTheme.addEventListener('change', () => {
@@ -48,6 +51,9 @@ function setTheme(theme) {
       iconThemeMoon.classList.replace('visible', 'hidden');
       iconThemeSun.classList.replace('hidden', 'visible');
       localStorage.setItem(activeThemeKey, lightTheme);
+      imgCloud.classList.replace('img-white', 'img-black');
+      imgTechIcons.forEach(imgTechIcon => imgTechIcon.classList.replace('img-white', 'img-black'));
+      img5dpoRobot.classList.replace('img-white', 'img-black');
       break;
     case darkTheme:
     default:
@@ -55,6 +61,9 @@ function setTheme(theme) {
       iconThemeMoon.classList.replace('hidden', 'visible');
       iconThemeSun.classList.replace('visible', 'hidden');
       localStorage.setItem(activeThemeKey, darkTheme);
+      imgCloud.classList.replace('img-black', 'img-white');
+      imgTechIcons.forEach(imgTechIcon => imgTechIcon.classList.replace('img-black', 'img-white'));
+      img5dpoRobot.classList.replace('img-black', 'img-white');
       break;
   }
 }
