@@ -1,5 +1,29 @@
-const NUM_LETTERS = 13;
+const NUM_LETTERS = 19;
 const FOOD_LETTERS = [
+  {
+    letter: 'S',
+    color: '#97C227'
+  },
+  {
+    letter: 'O',
+    color: '#97C227'
+  },
+  {
+    letter: 'F',
+    color: '#97C227'
+  },
+  {
+    letter: 'Y',
+    color: '#97C227'
+  },
+  {
+    letter: 'N',
+    color: '#97C227'
+  },
+  {
+    letter: 'E',
+    color: '#97C227'
+  },
   {
     letter: 'I',
     color: '#6ed5f4'
@@ -186,8 +210,8 @@ function incrementScore() {
 }
 
 function displaySolutionLetter() {
-  const letterEl = document.getElementById('snake-solution-item-' + String(score + 1).padStart(2, '0'));
   const idx = score % NUM_LETTERS;
+  const letterEl = document.getElementById('snake-solution-item-' + String(idx + 1).padStart(2, '0'));
   letterEl.textContent = FOOD_LETTERS[idx].letter;
   const colorIdx = Math.floor(score / NUM_LETTERS);
   letterEl.color = SOLUTION_COLORS[colorIdx];
