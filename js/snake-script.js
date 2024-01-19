@@ -300,7 +300,7 @@ function checkGameOver() {
 function displayGameOver() {
   ctx.drawImage(imgGameOver, canvasWidth / 2 - 150, canvasHeight / 2 - 250, 300, 300);
   ctx.font = '3rem Russo One';
-  ctx.fillStyle = '#ccc';
+  ctx.fillStyle = '#000';
   ctx.textAlign = 'center';
   ctx.fillText("Game Over!", canvasWidth / 2, canvasHeight / 2 + 50);
   ctx.fillText("Nice Job!", canvasWidth / 2, canvasHeight / 2 + 100);
