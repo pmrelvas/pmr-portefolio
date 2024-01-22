@@ -17,7 +17,7 @@ html {
   --clr-background-secondary: #bdbcbc;
   --clr-primary: #181a21;
   --clr-secondary: #2c2e38;
-  --clr-code-selector: #2f42a1;
+  --clr-code-selector: #4658b1;
 }
 
 .dark-theme {
@@ -251,6 +251,12 @@ html {
         color: var(--clr-secondary);
         margin-top: 0.4rem;
         padding: 0.6rem;
+
+        &:hover {
+          color: var(--clr-primary);
+          outline: 0.12rem solid var(--clr-primary);
+          border: 0.12rem solid var(--clr-primary);
+        }
       }
     }
 
@@ -311,9 +317,13 @@ html {
 
     #tech-keywords {
       grid-area: keywords;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
       #keywords-background {
         width: calc(100% - 4rem);
+        max-width: 26rem;
         height: calc(100% - 4rem);
         margin-top: 2rem;
         margin-left: 2rem;
