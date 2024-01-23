@@ -1,30 +1,6 @@
 const NUM_LETTERS = 19;
 const FOOD_LETTERS = [
   {
-    letter: 'S',
-    color: '#97C227'
-  },
-  {
-    letter: 'O',
-    color: '#97C227'
-  },
-  {
-    letter: 'F',
-    color: '#97C227'
-  },
-  {
-    letter: 'Y',
-    color: '#97C227'
-  },
-  {
-    letter: 'N',
-    color: '#97C227'
-  },
-  {
-    letter: 'E',
-    color: '#97C227'
-  },
-  {
     letter: 'I',
     color: '#6ed5f4'
   },
@@ -55,6 +31,30 @@ const FOOD_LETTERS = [
   {
     letter: 'C',
     color: '#6ed5f4'
+  },
+  {
+    letter: 'S',
+    color: '#97C227'
+  },
+  {
+    letter: 'O',
+    color: '#97C227'
+  },
+  {
+    letter: 'F',
+    color: '#97C227'
+  },
+  {
+    letter: 'Y',
+    color: '#97C227'
+  },
+  {
+    letter: 'N',
+    color: '#97C227'
+  },
+  {
+    letter: 'E',
+    color: '#97C227'
   },
   {
     letter: 'J',
