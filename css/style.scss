@@ -250,7 +250,7 @@ html {
 
         &:hover {
           cursor: pointer;
-          text-shadow: var(--clr-primary) 0.05rem 0 0.12rem;
+          text-shadow: var(--clr-primary) 0.03rem 0 0.08rem;
         }
       }
 
@@ -265,7 +265,7 @@ html {
 
         &:hover {
           color: var(--clr-primary);
-          text-shadow: var(--clr-primary) 0.08rem 0 0.15rem;
+          text-shadow: var(--clr-primary) 0.05rem 0 0.12rem;
           outline: 0.12rem solid var(--clr-primary);
           border: 0.12rem solid var(--clr-primary);
           cursor: pointer;
