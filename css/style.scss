@@ -231,12 +231,19 @@ html {
 
       #img-pmr-photo {
         height: 70vh;
+        transition: 0.5s;
+
+        &:hover {
+          cursor: pointer;
+          height: 75vh;
+          transition: 0.5s;
+        }
       }
     }
 
     #home-title {
       grid-area: title;
-      font-family: 'Russo One', Arial;
+      font-family: 'Anton', 'Russo One', Arial;
       color: var(--clr-primary);
       display: flex;
       flex-direction: column;
@@ -247,6 +254,7 @@ html {
 
       h2 {
         caret-color: transparent;
+        font-size: 2.2rem;
 
         &:hover {
           cursor: pointer;
@@ -257,7 +265,8 @@ html {
       h1 {
         border: 0.1rem solid var(--clr-secondary);
         border-radius: 0.6rem;
-        font-size: 2.5rem;
+        font-size: 3.8rem;
+        letter-spacing: 0.1rem;
         color: var(--clr-secondary);
         margin-top: 0.4rem;
         padding: 0.6rem;
@@ -311,14 +320,19 @@ html {
         .tech-icon {
           width: 1.6rem;
           height: 1.6rem;
-          animation: animate 5s linear infinite;
+          animation: rainAnimation 5s linear infinite;
           animation-duration: calc(30s / var(--anim-duration));
           transform-origin: bottom;
           z-index: 5;
+
+          &:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+          }
         }
       }
 
-      @keyframes animate {
+      @keyframes rainAnimation {
         0% {
           transform: translateY(0);
         }
@@ -356,6 +370,11 @@ html {
 
         .horizontal-spacer {
           flex-grow: 1;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
         }
       }
       .keyword-code-container {
