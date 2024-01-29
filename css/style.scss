@@ -216,11 +216,35 @@ html {
 
   #home-container {
     display: grid;
+    position: relative;
     grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       'photo title techrain'
       'photo title keywords';
+
+    #img-home-trees {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    #img-home-mountain-right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 8;
+      width: 80vw;
+    }
+
+    #img-home-mountain-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90vw;
+      z-index: 7;
+    }
 
     #pmr-photo-container {
       grid-area: photo;
@@ -228,6 +252,7 @@ html {
       flex-direction: row;
       align-items: flex-end;
       justify-content: center;
+      z-index: 9;
 
       #img-pmr-photo {
         height: 70vh;
@@ -243,6 +268,7 @@ html {
 
     #home-title {
       grid-area: title;
+      position: absolute;
       font-family: 'Anton', 'Russo One', Arial;
       color: var(--clr-primary);
       display: flex;
