@@ -46,15 +46,21 @@ html {
       display: none;
     }
 
+    #nav-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    .i-nav-icon {
+      color: var(--clr-primary);
+    }
+
     // theme switcher
     #theme-switcher {
       display: flex;
       align-items: center;
       gap: 0.2rem;
-
-      .i-active-theme {
-        color: var(--clr-primary);
-      }
 
       #st-theme-switcher {
         height: 0;
