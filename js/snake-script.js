@@ -1,4 +1,4 @@
-const NUM_LETTERS = 13;
+const NUM_LETTERS = 19;
 const FOOD_LETTERS = [
   {
     letter: 'I',
@@ -31,6 +31,30 @@ const FOOD_LETTERS = [
   {
     letter: 'C',
     color: '#6ed5f4'
+  },
+  {
+    letter: 'S',
+    color: '#97C227'
+  },
+  {
+    letter: 'O',
+    color: '#97C227'
+  },
+  {
+    letter: 'F',
+    color: '#97C227'
+  },
+  {
+    letter: 'Y',
+    color: '#97C227'
+  },
+  {
+    letter: 'N',
+    color: '#97C227'
+  },
+  {
+    letter: 'E',
+    color: '#97C227'
   },
   {
     letter: 'J',
@@ -83,7 +107,7 @@ const canvasWidth = Math.floor(snakeCanvas.getBoundingClientRect().width);
 const canvasHeight = Math.floor(snakeCanvas.getBoundingClientRect().height);
 const imgGameOver = document.getElementById('img-snake-game-over');
 const mainContainerEl = document.getElementById('main-container');
-const boardBackground = getComputedStyle(document.body).getPropertyValue('--clr-background');
+const boardBackground = getComputedStyle(document.body).getPropertyValue('--clr-background-secondary');
 const snakeColor = getComputedStyle(document.body).getPropertyValue('--clr-primary');
 const snakeBorder = '#ccc';
 const unitSize = 25;
@@ -94,8 +118,6 @@ let foodX;
 let foodY;
 let score = 0;
 let snake = [
-  { x: unitSize * 4, y: 0 },
-  { x: unitSize * 3, y: 0 },
   { x: unitSize * 2, y: 0 },
   { x: unitSize, y: 0 },
   { x: 0, y: 0 },
@@ -186,8 +208,8 @@ function incrementScore() {
 }
 
 function displaySolutionLetter() {
-  const letterEl = document.getElementById('snake-solution-item-' + String(score + 1).padStart(2, '0'));
   const idx = score % NUM_LETTERS;
+  const letterEl = document.getElementById('snake-solution-item-' + String(idx + 1).padStart(2, '0'));
   letterEl.textContent = FOOD_LETTERS[idx].letter;
   const colorIdx = Math.floor(score / NUM_LETTERS);
   letterEl.color = SOLUTION_COLORS[colorIdx];
@@ -300,7 +322,7 @@ function checkGameOver() {
 function displayGameOver() {
   ctx.drawImage(imgGameOver, canvasWidth / 2 - 150, canvasHeight / 2 - 250, 300, 300);
   ctx.font = '3rem Russo One';
-  ctx.fillStyle = '#ccc';
+  ctx.fillStyle = '#000';
   ctx.textAlign = 'center';
   ctx.fillText("Game Over!", canvasWidth / 2, canvasHeight / 2 + 50);
   ctx.fillText("Nice Job!", canvasWidth / 2, canvasHeight / 2 + 100);

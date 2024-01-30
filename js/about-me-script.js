@@ -1,7 +1,7 @@
 const aboutMeCircleEl = document.getElementById('about-me-circle');
 const aboutMeEl = document.getElementById('about-me');
 const experienceEl = document.getElementById('experience');
-const circleDiameterMin = 20;
+const circleDiameterMin = 0;
 const circleDiameterStd = 100;
 
 window.addEventListener('scroll', () => {

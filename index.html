@@ -9,11 +9,13 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&family=Russo+One&family=Anton&family=Clicker+Script&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/8f12e50e01.js" crossorigin="anonymous"></script>
   <!-- TODO uglify and minify js -->
   <script defer src="js/nav-bar-script.js"></script>
+  <script defer src="js/home-script.js"></script>
   <script defer src="js/experience-script.js"></script>
   <script defer src="js/snake-script.js"></script>
   <script defer src="js/about-me-script.js"></script>
@@ -37,11 +39,19 @@
         </ul>
       </nav>
       <div id="horizontal-spacer"></div>
-      <div id="theme-switcher">
-        <i class="fa-solid fa-sun i-active-theme visible" id="i-theme-sun"></i>
-        <i class="fa-solid fa-moon i-active-theme hidden" id="i-theme-moon"></i>
-        <input type="checkbox" id="st-theme-switcher" value="true" />
-        <label for="st-theme-switcher" id="lbl-st-theme-switcher"></label>
+      <div id="nav-actions">
+        <a href="https://www.linkedin.com/in/pedro-relvas/" class="i-nav-icon" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/pmrelvas" class="i-nav-icon" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <div id="theme-switcher">
+          <i class="fa-solid fa-sun i-nav-icon visible" id="i-theme-sun"></i>
+          <i class="fa-solid fa-moon i-nav-icon hidden" id="i-theme-moon"></i>
+          <input type="checkbox" id="st-theme-switcher" value="true" />
+          <label for="st-theme-switcher" id="lbl-st-theme-switcher"></label>
+        </div>
       </div>
     </div>
   </header>
@@ -50,14 +60,16 @@
     <!-- home screen -->
     <section id="home" class="full-page">
       <div class="full-page-container" id="home-container">
+        <img id="img-home-trees" src="assets/trees.png" alt="trees">
+        <img id="img-home-mountain-right" src="assets/mountain-right.png" alt="mountain">
+        <img id="img-home-mountain-left" src="assets/mountain-left.png" alt="mountain">
+        <div id="home-thunder-lightening"></div>
         <div id="pmr-photo-container">
           <img id="img-pmr-photo" src="/assets/pmr-photo.png" alt="Pedro photo">
         </div>
         <div id="home-title">
-          <div class="title-container">
-            <h2>Pedro Relvas</h2>
-            <h1>Full-Stack<br>Developer</h1>
-          </div>
+          <h2 id="title-name">Pedro Relvas</h2>
+          <h1 id="title-full-stack">Full-Stack<br>Developer</h1>
         </div>
         <div id="tech-rain-container">
           <!-- tech cloud rain-->
@@ -70,11 +82,14 @@
                 style="--anim-duration:20">
               <img src="/assets/tech_icons/docker-icon.png" alt="docker icon" class="tech-icon img-white"
                 style="--anim-duration:16">
-              <img src="/assets/tech_icons/java-icon.svg" alt="java icon" class="tech-icon img-white" style="--anim-duration:13">
+              <img src="/assets/tech_icons/java-icon.svg" alt="java icon" class="tech-icon img-white"
+                style="--anim-duration:13">
               <img src="/assets/tech_icons/postgres-icon.png" alt="postgres icon" class="tech-icon img-white"
                 style="--anim-duration:17">
-              <img src="/assets/tech_icons/html-icon.png" alt="HTML icon" class="tech-icon img-white" style="--anim-duration:12">
-              <img src="/assets/tech_icons/css-icon.svg" alt="CSS icon" class="tech-icon img-white" style="--anim-duration:15">
+              <img src="/assets/tech_icons/html-icon.png" alt="HTML icon" class="tech-icon img-white"
+                style="--anim-duration:12">
+              <img src="/assets/tech_icons/css-icon.svg" alt="CSS icon" class="tech-icon img-white"
+                style="--anim-duration:15">
             </div>
           </div>
         </div>
@@ -124,7 +139,7 @@
         </div>
         <div id="about-me-web-dev">
           <div class="about-me-card">
-            <p>Hi, I’m a full-stack web developer with 4 years of experience, used to code, review, test and maintain
+            <p>Hi, I’m a full-stack web developer with 4+ years of experience, used to code, review, test and maintain
               clean and scalable code.</p>
           </div>
           <img src="/assets/pmr-computer.png" id="img-pmr-sticker-computer" alt="Pedro sticker with computer">
@@ -182,6 +197,22 @@
                 </ul>
               </div>
             </div>
+            <div class="exp-timeline-item" id="exp-timeline-item-sofyne">
+              <span class="exp-timeline-year">2018</span>
+              <div class="exp-timeline-sphere-container">
+                <div class="exp-timeline-sphere"></div>
+              </div>
+              <div class="exp-timeline-details">
+                <h3 class="exp-timeline-position">Application Support</h3>
+                <small class="exp-timeline-place">@ SOFYNE</small>
+                <p class="exp-timeline-description">Logistic Execution Systems and Manufactoring Execution Systems
+                  support</p>
+                <ul class="exp-timeline-keyword-chips">
+                  <li>Oracle DB</li>
+                  <li>Apriso Flexnet</li>
+                </ul>
+              </div>
+            </div>
             <div class="exp-timeline-item" id="exp-timeline-item-jumia">
               <span class="exp-timeline-year">2019</span>
               <div class="exp-timeline-sphere-container">
@@ -190,7 +221,8 @@
               <div class="exp-timeline-details">
                 <h3 class="exp-timeline-position">Web Developer</h3>
                 <small class="exp-timeline-place">@ Jumia</small>
-                <p class="exp-timeline-description">Development and maintenance of 10 backoffice web microservices.</p>
+                <p class="exp-timeline-description">Development and maintenance of more than 10 backoffice web
+                  microservices.</p>
                 <ul class="exp-timeline-keyword-chips">
                   <li>SpringBoot</li>
                   <li>Angular</li>
@@ -202,6 +234,7 @@
                   <li>JUnit</li>
                   <li>Prometheus</li>
                   <li>New Relic</li>
+                  <li>Jenkins</li>
                   <li>HTML</li>
                   <li>TypeScript</li>
                   <li>CSS</li>
@@ -243,6 +276,13 @@
             <span id="snake-solution-item-11" class="snake-solution-item">&nbsp;</span>
             <span id="snake-solution-item-12" class="snake-solution-item">&nbsp;</span>
             <span id="snake-solution-item-13" class="snake-solution-item">&nbsp;</span>
+            <span id="snake-solution-item-14" class="snake-solution-item">&nbsp;</span>
+            <span>,</span>
+            <span id="snake-solution-item-15" class="snake-solution-item">&nbsp;</span>
+            <span id="snake-solution-item-16" class="snake-solution-item">&nbsp;</span>
+            <span id="snake-solution-item-17" class="snake-solution-item">&nbsp;</span>
+            <span id="snake-solution-item-18" class="snake-solution-item">&nbsp;</span>
+            <span id="snake-solution-item-19" class="snake-solution-item">&nbsp;</span>
           </div>
 
           <div id="snake-navigation-buttons">
