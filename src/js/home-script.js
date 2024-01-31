@@ -14,7 +14,7 @@ const onThunderClick = () => {
   setTimeout(() => {
     homeThunderLightening.classList.remove('thunder-animation');
   }, 2000);
-}
+};
 
 titleFullStack.addEventListener('click', onThunderClick);
 titleName.addEventListener('click', onThunderClick);
