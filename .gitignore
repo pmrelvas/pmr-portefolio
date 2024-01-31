@@ -1,2 +1,4 @@
-/css/*.css*
 .DS_Store
+src/style/*.css*
+dist/*
+node_modules

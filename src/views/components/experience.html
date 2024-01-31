@@ -1,0 +1,142 @@
+<section id="experience" class="full-page">
+  <button id="btn-experience-toggle-game" type="button" class="btn" data-toggle="tooltip" data-placement="bottom"
+    title="Toggle snake game view">
+    <i class="fa-solid fa-gamepad"></i>
+  </button>
+  <div id="experience-timeline">
+    <div id="experience-timeline-wrapper">
+      <div id="experience-timeline-container">
+        <div id="exp-timeline-line"></div>
+        <div class="exp-timeline-item" id="exp-timeline-item-feup">
+          <span class="exp-timeline-year">2012</span>
+          <div class="exp-timeline-sphere-container">
+            <div class="exp-timeline-sphere"></div>
+          </div>
+          <div class="exp-timeline-details">
+            <h3 class="exp-timeline-position">Integrated Masters in Electrical and Computer Engineering, Specialized
+              in Robotics and Systems</h3>
+            <small class="exp-timeline-place">@ FEUP</small>
+          </div>
+        </div>
+        <div class="exp-timeline-item" id="exp-timeline-item-inesc">
+          <span class="exp-timeline-year">2017</span>
+          <div class="exp-timeline-sphere-container">
+            <div class="exp-timeline-sphere"></div>
+          </div>
+          <div class="exp-timeline-details">
+            <h3 class="exp-timeline-position">Research Assistant</h3>
+            <small class="exp-timeline-place">@ INESC TEC</small>
+            <p class="exp-timeline-description">Research and software development in the fields of computer vision
+              and
+              mobile robots.</p>
+            <ul class="exp-timeline-keyword-chips">
+              <li>C/C++</li>
+              <li>ROS</li>
+              <li>OpenCV</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-timeline-item" id="exp-timeline-item-sofyne">
+          <span class="exp-timeline-year">2018</span>
+          <div class="exp-timeline-sphere-container">
+            <div class="exp-timeline-sphere"></div>
+          </div>
+          <div class="exp-timeline-details">
+            <h3 class="exp-timeline-position">Application Support</h3>
+            <small class="exp-timeline-place">@ SOFYNE</small>
+            <p class="exp-timeline-description">Logistic Execution Systems and Manufactoring Execution Systems
+              support</p>
+            <ul class="exp-timeline-keyword-chips">
+              <li>Oracle DB</li>
+              <li>Apriso Flexnet</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-timeline-item" id="exp-timeline-item-jumia">
+          <span class="exp-timeline-year">2019</span>
+          <div class="exp-timeline-sphere-container">
+            <div class="exp-timeline-sphere"></div>
+          </div>
+          <div class="exp-timeline-details">
+            <h3 class="exp-timeline-position">Web Developer</h3>
+            <small class="exp-timeline-place">@ Jumia</small>
+            <p class="exp-timeline-description">Development and maintenance of more than 10 backoffice web
+              microservices.</p>
+            <ul class="exp-timeline-keyword-chips">
+              <li>SpringBoot</li>
+              <li>Angular</li>
+              <li>Java</li>
+              <li>PostgreSQL</li>
+              <li>Kafka</li>
+              <li>RabbitMQ</li>
+              <li>Docker</li>
+              <li>JUnit</li>
+              <li>Prometheus</li>
+              <li>New Relic</li>
+              <li>Jenkins</li>
+              <li>HTML</li>
+              <li>TypeScript</li>
+              <li>CSS</li>
+              <li>Cypress</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="snake-side">
+    <div id="snake-container">
+      <div id="snake-header-container">
+        <div id="snake-score-container">
+          <span>Score:</span>
+          <span id="snake-score">0</span>
+        </div>
+
+        <button id="btn-reset-snake-game">Reset</button>
+      </div>
+
+      <div id="snake-canvas-container">
+        <canvas id="snake-canvas"></canvas>
+        <img src="/assets/snake-game-over.png" id="img-snake-game-over" alt="snake game over image">
+      </div>
+
+      <div id="snake-solution">
+        <span id="snake-solution-item-01" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-02" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-03" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-04" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-05" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-06" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-07" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-08" class="snake-solution-item">&nbsp;</span>
+        <span>,</span>
+        <span id="snake-solution-item-09" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-10" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-11" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-12" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-13" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-14" class="snake-solution-item">&nbsp;</span>
+        <span>,</span>
+        <span id="snake-solution-item-15" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-16" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-17" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-18" class="snake-solution-item">&nbsp;</span>
+        <span id="snake-solution-item-19" class="snake-solution-item">&nbsp;</span>
+      </div>
+
+      <div id="snake-navigation-buttons">
+        <button id="btn-snake-nav-up" class="btn-snake-nav">&uarr;</button>
+        <button id="btn-snake-nav-left" class="btn-snake-nav">&larr;</button>
+        <button id="btn-snake-nav-down" class="btn-snake-nav">&darr;</button>
+        <button id="btn-snake-nav-right" class="btn-snake-nav">&rarr;</button>
+      </div>
+
+      <div id="snake-quote-container">
+        <div id="snake-quote">
+          <q>If it’s not fun, you’re not doing it right</q>
+          <span id="snake-quote-author">Bob Basso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

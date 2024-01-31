@@ -1,0 +1,61 @@
+@import "header";
+@import "home";
+@import "about-me";
+@import "experience";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.full-page {
+  height: 100vh;
+}
+
+.light-theme {
+  --clr-background: #eee;
+  --clr-background-secondary: #bdbcbc;
+  --clr-primary: #181a21;
+  --clr-secondary: #2c2e38;
+  --clr-code-selector: #4658b1;
+}
+
+.dark-theme {
+  --clr-background: #181a21;
+  --clr-background-secondary: #2a2b31;
+  --clr-primary: #fff;
+  --clr-secondary: #acacac;
+  --clr-code-selector: #fdaf19;
+}
+
+#horizontal-spacer {
+  content: '';
+  flex-grow: 1;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.full-page-container {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 3rem;
+}
+
+.img-black {
+  filter: invert(100%);
+}
+
+.img-white {
+  filter: invert(0%);
+}
