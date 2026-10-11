@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pmr-portefolio
 
-## Getting Started
+Personal portfolio landing page for **Pedro Relvas — Full-Stack Developer**.
 
-First, run the development server:
+Built with **Next.js 16** (App Router, Cache Components), **React 19**, **TypeScript** and
+**Sass CSS Modules** (ported from the original Webpack/SCSS portfolio).
+
+## Features
+
+- **Navigation** — fixed top bar with anchor links (`#home`, `#skills`, `#contact`), scroll‑spy
+  active link highlighting and a mobile menu.
+- **Hero** — "Full‑Stack Developer" with the name underneath (left), photo (right) and a
+  **parallax** effect on scroll (respects `prefers-reduced-motion`).
+- **Tech rain** — the cloud + falling tech icons animation from the original site, rendered with
+  pure CSS keyframes (`--anim-duration` per icon).
+- **Skills** — grouped cards: Programming, Tools, Methodologies, Soft Skills.
+- **Contact form** — validated client form submitted through a **Server Action** that sends the
+  message with **Resend** (honeypot + length caps included).
+- **Dark / light theme** — persisted preference, no flash on load.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables (contact form)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in the values. The keys are **server-side only** —
+never prefix them with `NEXT_PUBLIC_`.
 
-## Learn More
+| Variable              | Description                                          |
+| --------------------- | ---------------------------------------------------- |
+| `RESEND_API_KEY`      | Resend API key (create it with sending-only access). |
+| `CONTACT_TO_EMAIL`    | Address that receives the contact messages.          |
+| `CONTACT_FROM_EMAIL`  | Verified sender address on your domain.              |
 
-To learn more about Next.js, take a look at the following resources:
+While testing without a verified domain you can use Resend's onboarding sender:
+`Portfolio <onboarding@resend.dev>`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/
+  layout.tsx            fonts, metadata, theme boot script
+  page.tsx              Home page (sections + footer)
+  globals.css           theme tokens + base styles
+  components/           Nav, Hero, TechRain, Skills, Contact, ThemeToggle, icons
+  actions/contact.ts    Server Action for the contact form
+lib/mailer.ts           server-only Resend sender
+public/assets/          hero photo (compressed WebP), cloud, tech icons
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev     # development server
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```

@@ -1,0 +1,93 @@
+.techRain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  color: var(--rain-cloud-color);
+}
+
+.cloudWrap {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(60%, 220px);
+  animation: cloudFloat 6s ease-in-out infinite;
+}
+
+.cloud {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.18));
+}
+
+.icons {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Keep the row inside the cloud's footprint so no icon starts outside it:
+     96% of the cloud width, flex items shrink (via min-width: 0) to fit. */
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  /* Let the icons shrink to fit the cloud width instead of overflowing. */
+  min-width: 0;
+  flex-shrink: 1;
+  object-fit: contain;
+  filter: var(--rain-icon-filter, none);
+  animation-name: rain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(30s / var(--anim-duration, 15));
+  will-change: transform, opacity;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--rain-distance, 46vh));
+    opacity: 0;
+  }
+}
+
+@keyframes cloudFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(0.6rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .cloudWrap {
+    top: 2%;
+    width: min(100%, 170px);
+  }
+
+  .icons {
+    gap: 0.4rem;
+  }
+
+  .icon {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+}
