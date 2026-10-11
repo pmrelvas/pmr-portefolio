@@ -128,8 +128,7 @@ export default function Hero() {
           <p className={styles.name}>Pedro Relvas</p>
 
           <p className={styles.lead}>
-            I design and build clean, scalable web applications — from Java &amp; Spring back
-            ends to Angular &amp; TypeScript front ends, shipped with Docker, CI/CD and a
+            I design and build clean, scalable web applications — from Java &amp; SpringBoot and Quarkus backends to Angular &amp; TypeScript front ends, shipped with Docker, CI/CD and a
             teamwork-first mindset.
           </p>
 
