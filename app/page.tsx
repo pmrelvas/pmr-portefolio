@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { GitHubIcon, LinkedInIcon } from "./components/icons";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <main>
         <Hero />
         <Skills />
+        <Projects />
         <Contact />
       </main>
       <footer className="border-t border-[var(--border)] py-6">

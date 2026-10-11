@@ -2,20 +2,23 @@
 
 Personal portfolio landing page.
 
-Built with **Next.js 16** (App Router, Cache Components), **React 19**, **TypeScript** and
+Built with **Next.js 16** (App Router), **React 19**, **TypeScript** and
 **Sass CSS Modules** (ported from the original Webpack/SCSS portfolio). Deployed to **GitHub
 Pages** as a static export.
 
 ## Features
 
-- **Navigation** — fixed top bar with anchor links (`#home`, `#skills`, `#contact`), scroll‑spy
-  active link highlighting and a mobile menu.
+- **Navigation** — fixed top bar with anchor links (`#home`, `#skills`, `#projects`, `#contact`),
+  scroll‑spy active link highlighting and a mobile menu.
 - **Hero** — "Full‑Stack Developer" with the name underneath (left), photo (right), a
   **parallax** effect on scroll and a **cursor spotlight** that trails the pointer (both respect
   `prefers-reduced-motion`; the spotlight is skipped on touch devices).
 - **Tech rain** — the cloud + falling tech icons animation from the original site, rendered with
   pure CSS keyframes (`--anim-duration` per icon).
 - **Skills** — grouped cards: Programming, Tools, Methodologies, Soft Skills.
+- **Side projects** — a swipeable, scroll‑snap carousel of project cards (screenshot, description,
+  tags and an external link). Selecting a screenshot opens a full‑screen lightbox that closes with
+  Escape, the close button or a click on the backdrop.
 - **Contact** — a `mailto:` call-to-action linking to the address configured at build time.
 - **Dark / light theme** — persisted preference, no flash on load.
 
@@ -46,11 +49,32 @@ app/
   layout.tsx            fonts, metadata, theme boot script
   page.tsx              Home page (sections + footer)
   globals.css           theme tokens + base styles
-  components/           Nav, Hero, TechRain, Skills, Contact, ThemeToggle, icons
+  components/           Nav, Hero, TechRain, Skills, Projects, ProjectsCarousel,
+                        ScreenshotLightbox, ThemeToggle, icons
 lib/base-path.ts         basePath-aware helper for public/ asset URLs
-public/assets/           hero photo (compressed WebP), cloud, tech icons
+lib/projects.ts          side-project entries (title, description, link, screenshot, tags)
+public/assets/           hero photo (compressed WebP), cloud, tech icons, project screenshots
 .github/workflows/       ci.yml (PRs) + deploy.yml (GitHub Pages)
 ```
+
+## Adding a side project
+
+Edit [`lib/projects.ts`](lib/projects.ts) and drop a screenshot into
+`public/assets/projects/`:
+
+```ts
+{
+  slug: "my-app",
+  title: "My App",
+  description: "One or two sentences about what it does.",
+  href: "https://example.com",
+  image: "/assets/projects/my-app.png", // PNG, JPG, WebP or animated GIF
+  tags: ["Next.js", "PostgreSQL"],
+}
+```
+
+Use the plain `/assets/...` path for `image` — the GitHub Pages base path is applied
+automatically. The three entries shipped in the file are placeholders, so replace or delete them.
 
 ## Scripts
 

@@ -1,0 +1,51 @@
+.projects {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
+  scroll-margin-top: var(--nav-height);
+}
+
+.header {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  color: var(--code-selector);
+}
+
+.title {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.empty {
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.empty code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .projects {
+    padding: 4.5rem 0;
+  }
+}
