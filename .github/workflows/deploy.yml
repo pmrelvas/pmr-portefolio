@@ -22,6 +22,10 @@ jobs:
   build:
     name: Build static export
     runs-on: ubuntu-latest
+    # Target the same environment as the deploy job so a
+    # NEXT_PUBLIC_CONTACT_EMAIL defined under Settings > Environments >
+    # github-pages is visible here too — this is the job that bakes it in.
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,13 +51,25 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
+      - name: Verify contact email
+        env:
+          # Repository variable (Settings > Secrets and variables > Actions >
+          # Variables) with a repository secret of the same name as a fallback.
+          # Either works; the value is public, so a secret buys nothing here.
+          CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL || secrets.NEXT_PUBLIC_CONTACT_EMAIL }}
+        run: |
+          if [ -z "$CONTACT_EMAIL" ]; then
+            echo "::warning title=Contact email not configured::NEXT_PUBLIC_CONTACT_EMAIL is empty, so the contact section will show a placeholder. Add it under Settings > Secrets and variables > Actions > Variables (repository scope)."
+          else
+            echo "NEXT_PUBLIC_CONTACT_EMAIL is set; it will be embedded in the static export."
+          fi
+
       - name: Build
         run: npm run build
         env:
           # Sub-path of the Pages site (empty for user/org sites and custom domains).
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-          # Repository variable: Settings > Secrets and variables > Actions > Variables.
-          NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL }}
+          NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL || secrets.NEXT_PUBLIC_CONTACT_EMAIL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
