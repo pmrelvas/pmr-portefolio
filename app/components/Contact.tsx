@@ -30,12 +30,11 @@ export default function Contact() {
         <div className={styles.card} data-animate data-animate-delay={3}>
           {email ? (
             <a className={styles.cta} href={`mailto:${email}`}>
-              {email}
+              Contact me
             </a>
           ) : (
             <p className={styles.empty}>
-              The contact email isn&apos;t configured yet. Set{" "}
-              <code>NEXT_PUBLIC_CONTACT_EMAIL</code> to show it here.
+              The contact email isn&apos;t configured yet.
             </p>
           )}
         </div>
