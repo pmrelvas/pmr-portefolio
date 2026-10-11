@@ -15,15 +15,19 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <div className="container">
         <header className={styles.header}>
-          <span className={styles.tag}>&lt;contact /&gt;</span>
-          <h2 className={styles.title}>Get in touch</h2>
-          <p className={styles.subtitle}>
+          <span className={styles.tag} data-animate data-caret>
+            &lt;contact /&gt;
+          </span>
+          <h2 className={styles.title} data-animate data-underline data-animate-delay={1}>
+            Get in touch
+          </h2>
+          <p className={styles.subtitle} data-animate data-animate-delay={2}>
             Have a project or an opportunity in mind? Send me an email and I&apos;ll get back to
             you.
           </p>
         </header>
 
-        <div className={styles.card}>
+        <div className={styles.card} data-animate data-animate-delay={3}>
           {email ? (
             <a className={styles.cta} href={`mailto:${email}`}>
               {email}

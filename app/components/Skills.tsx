@@ -51,21 +51,30 @@ export default function Skills() {
       <div className="container">
         <header className={styles.header}>
           <div className={styles.headerText}>
-            <span className={styles.tag}>&lt;skills /&gt;</span>
-            <h2 className={styles.title}>Skills</h2>
-            <p className={styles.subtitle}>
+            <span className={styles.tag} data-animate data-caret>
+              &lt;skills /&gt;
+            </span>
+            <h2 className={styles.title} data-animate data-underline data-animate-delay={1}>
+              Skills
+            </h2>
+            <p className={styles.subtitle} data-animate data-animate-delay={2}>
               The technologies, tools and ways of working I bring to a team.
             </p>
           </div>
 
-          <div className={styles.rainWrap} aria-hidden="true">
+          <div className={styles.rainWrap} data-animate data-animate-delay={1} aria-hidden="true">
             <TechRain />
           </div>
         </header>
 
         <div className={styles.grid}>
-          {groups.map((group) => (
-            <article key={group.title} className={styles.card}>
+          {groups.map((group, index) => (
+            <article
+              key={group.title}
+              className={styles.card}
+              data-animate
+              data-animate-delay={index + 1}
+            >
               <h3 className={styles.cardTitle}>{group.title}</h3>
               <ul className={styles.chips}>
                 {group.items.map((item) => (

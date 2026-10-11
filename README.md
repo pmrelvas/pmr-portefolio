@@ -20,6 +20,11 @@ Pages** as a static export.
   tags and an external link). Selecting a screenshot opens a full‑screen lightbox that closes with
   Escape, the close button or a click on the backdrop.
 - **Contact** — a `mailto:` call-to-action linking to the address configured at build time.
+- **Motion** — a staggered hero entrance plus scroll-reveal animations for each section, driven by a
+  single `data-animate` hook (see `app/components/ScrollReveal.tsx` and the motion block in
+  `app/globals.css`), with a blinking caret on the section labels and an accent rule that draws in
+  under section titles. Purely decorative: nothing is hidden without JS and everything is disabled
+  under `prefers-reduced-motion`.
 - **Dark / light theme** — persisted preference, no flash on load.
 
 ## Getting started

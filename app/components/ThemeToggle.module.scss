@@ -22,4 +22,21 @@
 .icon {
   width: 1.15rem;
   height: 1.15rem;
+  animation: icon-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* The moon/sun icon is a different component per theme, so switching themes
+   remounts it and replays this little spin. */
+@keyframes icon-in {
+  from {
+    opacity: 0;
+    rotate: -90deg;
+    scale: 0.6;
+  }
+
+  to {
+    opacity: 1;
+    rotate: 0deg;
+    scale: 1;
+  }
 }

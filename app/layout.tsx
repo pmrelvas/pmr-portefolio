@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Mono, Russo_One } from "next/font/google";
 import { assetPath } from "@/lib/base-path";
+import ScrollReveal from "./components/ScrollReveal";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <script dangerouslySetInnerHTML={{ __html: themeBoot }} />
+        <ScrollReveal />
         {children}
       </body>
     </html>

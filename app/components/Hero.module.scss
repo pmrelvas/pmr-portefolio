@@ -47,6 +47,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   color: var(--muted);
+  --hero-delay: 0.05s;
 }
 
 .eyebrowMono {
@@ -61,6 +62,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--primary);
+  --hero-delay: 0.14s;
 }
 
 .name {
@@ -69,6 +71,7 @@
   font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   letter-spacing: 0.06em;
   color: var(--accent);
+  --hero-delay: 0.23s;
 }
 
 .lead {
@@ -77,6 +80,7 @@
   font-size: 1.02rem;
   line-height: 1.7;
   color: var(--secondary);
+  --hero-delay: 0.32s;
 }
 
 .cta {
@@ -84,6 +88,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2rem;
+  --hero-delay: 0.41s;
 }
 
 .primaryBtn,
@@ -138,12 +143,58 @@
   z-index: 2;
   width: min(100%, 24rem);
   filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35));
+  --hero-delay: 0.18s;
 }
 
 .photo {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Entrance — a short staggered rise on first paint.                  */
+/*  Uses `translate`/`scale` (not `transform`) so it never fights the   */
+/*  parallax transforms the Hero script writes onto `.text`/.visual`.   */
+/* ------------------------------------------------------------------ */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    translate: 0 1.4rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes hero-in-visual {
+  from {
+    opacity: 0;
+    translate: 0 1.4rem;
+    scale: 1.04;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+.eyebrow,
+.title,
+.name,
+.lead,
+.cta {
+  animation: hero-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--hero-delay, 0s);
+}
+
+.photoWrap {
+  animation: hero-in-visual 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--hero-delay, 0s);
 }
 
 @media (max-width: 900px) {
@@ -176,5 +227,16 @@
 
   .photoWrap {
     width: min(70%, 18rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow,
+  .title,
+  .name,
+  .lead,
+  .cta,
+  .photoWrap {
+    animation: none;
   }
 }
