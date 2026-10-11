@@ -1,6 +1,6 @@
 # pmr-portefolio
 
-Personal portfolio landing page for **Pedro Relvas — Full-Stack Developer**.
+Personal portfolio landing page.
 
 Built with **Next.js 16** (App Router, Cache Components), **React 19**, **TypeScript** and
 **Sass CSS Modules** (ported from the original Webpack/SCSS portfolio). Deployed to **GitHub
