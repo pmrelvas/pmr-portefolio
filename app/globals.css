@@ -25,6 +25,8 @@
   --rain-icon-filter: none;
   /* Cloud color per theme: white on dark, black on light. */
   --rain-cloud-color: #ffffff;
+  /* Cursor spotlight on the hero — a soft light on the dark theme… */
+  --hero-glow: rgba(255, 255, 255, 0.45);
 
   --nav-height: 4rem;
 }
@@ -49,6 +51,8 @@
      that are white/light would otherwise disappear against the page). */
   --rain-icon-filter: brightness(0);
   --rain-cloud-color: #000000;
+  /* …and a soft shadow on the light theme, for contrast. */
+  --hero-glow: rgba(24, 26, 33, 0.5);
 }
 
 *,

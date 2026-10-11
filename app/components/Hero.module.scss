@@ -7,6 +7,26 @@
   overflow: hidden;
 }
 
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 22rem;
+  height: 22rem;
+  margin: -11rem 0 0 -11rem;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(closest-side, var(--hero-glow), transparent 78%);
+  transition: opacity 0.45s ease;
+  will-change: transform, opacity;
+
+  &[data-active="true"] {
+    opacity: 1;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;

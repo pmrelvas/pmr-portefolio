@@ -10,8 +10,9 @@ Pages** as a static export.
 
 - **Navigation** — fixed top bar with anchor links (`#home`, `#skills`, `#contact`), scroll‑spy
   active link highlighting and a mobile menu.
-- **Hero** — "Full‑Stack Developer" with the name underneath (left), photo (right) and a
-  **parallax** effect on scroll (respects `prefers-reduced-motion`).
+- **Hero** — "Full‑Stack Developer" with the name underneath (left), photo (right), a
+  **parallax** effect on scroll and a **cursor spotlight** that trails the pointer (both respect
+  `prefers-reduced-motion`; the spotlight is skipped on touch devices).
 - **Tech rain** — the cloud + falling tech icons animation from the original site, rendered with
   pure CSS keyframes (`--anim-duration` per icon).
 - **Skills** — grouped cards: Programming, Tools, Methodologies, Soft Skills.
