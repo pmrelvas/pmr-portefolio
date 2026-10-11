@@ -31,7 +31,7 @@
   line-height: 1.6;
 }
 
-.form {
+.card {
   max-width: 46rem;
   padding: 2rem;
   border: 1px solid var(--border);
@@ -40,107 +40,35 @@
   box-shadow: var(--shadow);
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.label {
-  font-family: var(--font-heading), sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--secondary);
-}
-
-.input,
-.textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  background-color: var(--bg);
-  color: var(--primary);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.98rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  &::placeholder {
-    color: var(--muted);
-  }
-
-  &:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
-  }
-}
-
-.textarea {
-  resize: vertical;
-  min-height: 9rem;
-}
-
-.honeypot {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.submit {
+.cta {
+  display: inline-block;
   padding: 0.85rem 1.9rem;
-  border: none;
   border-radius: 2rem;
   background-color: var(--accent);
   color: var(--accent-contrast);
   font-family: var(--font-heading), sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover:not(:disabled) {
+  &:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 30px -14px var(--accent);
   }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
 }
 
-.status {
+.empty {
   margin: 0;
-  font-size: 0.9rem;
+  color: var(--secondary);
+  line-height: 1.6;
 }
 
-.status[data-status="success"] {
-  color: #34c759;
-}
-
-.status[data-status="error"] {
-  color: #ff5a5f;
+.empty code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+  color: var(--primary);
 }
 
 @media (max-width: 640px) {
@@ -148,12 +76,7 @@
     padding: 4.5rem 0 5rem;
   }
 
-  .form {
+  .card {
     padding: 1.35rem;
-  }
-
-  .row {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 }

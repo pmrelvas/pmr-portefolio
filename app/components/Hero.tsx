@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/base-path";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
@@ -77,7 +78,7 @@ export default function Hero() {
         <div className={styles.visual} ref={visualRef}>
           <div className={styles.photoWrap}>
             <Image
-              src="/assets/pmr-photo.webp"
+              src={assetPath("/assets/pmr-photo.webp")}
               alt="Pedro Relvas"
               width={990}
               height={1400}

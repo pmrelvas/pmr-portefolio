@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { CSSProperties } from "react";
+import { assetPath } from "@/lib/base-path";
 import styles from "./TechRain.module.scss";
 
 type TechIcon = {
@@ -39,7 +40,7 @@ export default function TechRain() {
           {icons.map((icon) => (
             <img
               key={icon.label}
-              src={icon.src}
+              src={assetPath(icon.src)}
               alt=""
               className={styles.icon}
               loading="eager"

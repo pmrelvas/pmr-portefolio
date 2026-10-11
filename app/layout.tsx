@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Mono, Russo_One } from "next/font/google";
+import { assetPath } from "@/lib/base-path";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Pedro Relvas, a full-stack software engineer building clean, scalable web applications with Java, Spring, Angular and TypeScript.",
   icons: {
-    icon: "/assets/pmr-computer.png",
+    icon: assetPath("/assets/pmr-computer.png"),
   },
 };
 
